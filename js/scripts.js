@@ -5,7 +5,7 @@
 */
 //
 // Scripts
-// 
+//
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -56,7 +56,6 @@ String.prototype.trim = function () {
 }
 function success() {
 
-	var check = false;
 	var x = document.getElementById("algoResult");
 	var y = document.getElementById("userText").value.trim();
 	console.log(y);
@@ -65,59 +64,30 @@ function success() {
 		alert("Enter some text");
 
 	}
-	//else  (y.text != null) {
 	else x.style.display = 'block';
-	//}
-	//else (x.style.display = 'none' && check == true)
 
 
+	var myHeaders = new Headers();
+	 myHeaders.append("Content-Type", "application/json");
 
+	 var raw = JSON.stringify({
+		 "text": document.getElementById("userText").value
+	 });
+	 console.log(document.getElementById("userText").value)
+		var requestOptions = {
+			method: 'POST',
+			headers: myHeaders,
+			body: raw,
+			redirect: 'follow'
+		};
 
-
-	    var myHeaders = new Headers();
-		 myHeaders.append("Content-Type", "application/json");
-
-		 var raw = JSON.stringify({
-			 "text": document.getElementById("userText").value
-		 });
-		 console.log(document.getElementById("userText").value)
-			var requestOptions = {
-				method: 'POST',
-				headers: myHeaders,
-				body: raw,
-				redirect: 'follow'
-			};
-
-			fetch("http://127.0.0.1:5000/sdgOP", requestOptions)
-				.then(res => res.json())
-				.then(data => obj = data)
-				.then(data => calculate(data))
-				.then(() => console.log(obj))
-				.catch(error => console.log('error', error));
-	 
-	//js for result--------------------------------------------------
-	/* var myHeaders = new Headers();
-	myHeaders.append("Content-Type", "application/json");
-
-	var raw = JSON.stringify({
-		"text": "123"
-	});
-
-	var requestOptions = {
-		method: 'POST',
-		headers: myHeaders,
-		body: raw,
-		redirect: 'follow'
-	};
-
-
-	fetch("http://127.0.0.1:5000/default", requestOptions)
-		.then(res => res.json())
-		.then(data => obj = data)
-		.then(data => calculate(data))
-		.then(() => console.log(obj))
-		.catch(error => console.log('error', error));
-		*/
+	 const hostName="localhost"
+	 fetch(`http://${hostName}:5000/sdgOP`, requestOptions)
+		 .then(res => res.json())
+		 .then(data => obj = data)
+		 .then(data => calculate(data))
+		 .then(() => console.log(obj))
+		 .catch(error => console.log('error', error));
 
 	let calculate = (data) => {
 			var div = document.getElementById('algoResult');
