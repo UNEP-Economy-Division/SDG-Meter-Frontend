@@ -29,3 +29,4 @@ You need [Docker](https://www.docker.com/) installed on your machine.
 2. Run the image:
 > docker run -p 7001:80 sdg-frontend
 
+The project will be accessible on the port 7001 of your machine: **localhost:7001**
