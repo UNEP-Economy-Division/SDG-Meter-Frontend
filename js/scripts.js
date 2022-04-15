@@ -82,7 +82,7 @@ function success() {
 		};
 
 	 const hostName="localhost"
-	 fetch(`http://${hostName}:5000/sdgOP`, requestOptions)
+	 fetch(`http://${hostName}:80/api/sdgOP`, requestOptions)
 		 .then(res => res.json())
 		 .then(data => obj = data)
 		 .then(data => calculate(data))
