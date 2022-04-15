@@ -17,16 +17,3 @@ phase using BERT and finally we will present and discuss the obtained results.
 
 In your navigator enter the path to access the **index.html** file.  
 > YOUR_PATH_TO_THE_PROJECT/index.html
-
-
-## Docker 
-You need [Docker](https://www.docker.com/) installed on your machine.
-
-1. Build the image: 
->  docker build --tag sdg-frontend .
-
-
-2. Run the image:
-> docker run -p 7001:80 sdg-frontend
-
-The project will be accessible on the port 7001 of your machine: **localhost:7001**
