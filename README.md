@@ -13,13 +13,13 @@ we propose to solve this problem with a multi-lablel classification of texts usi
 present the key steps for building our database, then the multi-label classification
 phase using BERT and finally we will present and discuss the obtained results.
 
-# Development
+## Development
 
 In your navigator enter the path to access the **index.html** file.  
 > YOUR_PATH_TO_THE_PROJECT/index.html
 
 
-# Docker 
+## Docker 
 You need [Docker](https://www.docker.com/) installed on your machine.
 
 1. Build the image: 
